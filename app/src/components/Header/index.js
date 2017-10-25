@@ -13,7 +13,7 @@ import React from 'react';
  */
 const Header = () => (
   <div id="header">
-		<h1>Current Weather</h1>
+    <h1>Current Weather</h1>
   </div>
 );
 

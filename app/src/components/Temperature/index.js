@@ -24,6 +24,7 @@ const Temperature = ( { weather, loaded, mobile, timeSydney, loadedTimeSydney } 
 
 
 	const obj = weather.list;
+	console.log(obj);
 	return (
 	  <div id="temp">
 			{
