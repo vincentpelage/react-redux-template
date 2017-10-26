@@ -7,7 +7,7 @@ import axios from 'axios';
 /*
  * Local import
  */
-import { WEATHER_LOAD, getWeather, TIME_LOAD_SYDNEY, getTimeSydney } from 'src/store/reducer';
+import { WEATHER_LOAD, getWeather, TIME_LOAD_SYDNEY, getTimeSydney, TIME_LOAD_PARIS, getTimeParis } from 'src/store/reducer';
 
 
 /*
@@ -24,12 +24,22 @@ const createMiddleware = store => next => (action) => {
     }
 
     case TIME_LOAD_SYDNEY: {
-			axios.post('http://localhost:3000',{
-				value:
-				'http://api.timezonedb.com/v2/get-time-zone?key=1LYUJ5AOD7V0&format=json&by=zone&zone=Australia/Sydney'})
-			.then((response) => {
-        store.dispatch(getTimeSydney(response.data));
-      });
+      axios.post('http://localhost:3000', {
+        value:
+        'http://api.timezonedb.com/v2/get-time-zone?key=1LYUJ5AOD7V0&format=json&by=zone&zone=Australia/Sydney' })
+        .then((response) => {
+          store.dispatch(getTimeSydney(response.data));
+        });
+      break;
+    }
+
+    case TIME_LOAD_PARIS: {
+      axios.post('http://localhost:3000', {
+        value:
+        'http://api.timezonedb.com/v2/get-time-zone?key=1LYUJ5AOD7V0&format=json&by=zone&zone=Europe/Paris' })
+        .then((response) => {
+          store.dispatch(getTimeParis(response.data));
+        });
       break;
     }
 

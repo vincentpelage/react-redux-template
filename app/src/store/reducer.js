@@ -2,20 +2,24 @@
  * Types
  */
 export const WEATHER_LOAD = 'WEATHER_LOAD';
-export const TIME_LOAD_SYDNEY = 'TIME_LOAD';
+export const TIME_LOAD_SYDNEY = 'TIME_LOAD_SYDNEY';
+export const TIME_LOAD_PARIS = 'TIME_LOAD_PARIS';
 export const WEATHER_LOADED = 'WEATHER_LOADED';
 export const TIME_LOADED_SYDNEY = 'TIME_LOADED_SYDNEY';
+export const TIME_LOADED_PARIS = 'TIME_LOADED_PARIS';
 export const SET_MOBILE = 'SET_MOBILE';
 
 /*
  * Initial state
  */
 const initialState = {
-	weather: {},
-	timeSydney: {},
+  weather: {},
+  timeSydney: {},
+  timeParis: {},
   loaded: false,
   loadedTimeSydney: false,
-	mobile: false,
+  loadedTimeParis: false,
+  mobile: false,
 };
 
 
@@ -38,13 +42,20 @@ export default (state = initialState, action = {}) => {
         loadedTimeSydney: true,
       };
 
-    case SET_MOBILE:
-		if(action.size < 600){
+    case TIME_LOADED_PARIS:
       return {
         ...state,
-        mobile: true,
+        timeParis: action.timeParis,
+        loadedTimeParis: true,
       };
-		}
+
+    case SET_MOBILE:
+      if (action.size < 600) {
+        return {
+          ...state,
+          mobile: true,
+        };
+      }
 
 
     default:
@@ -64,17 +75,26 @@ export const loadTimeSydney = () => ({
   type: TIME_LOAD_SYDNEY,
 });
 
-export const setMobile = (size) => ({
-  type: SET_MOBILE,
-	size,
+export const loadTimeParis = () => ({
+  type: TIME_LOAD_PARIS,
 });
 
-export const getWeather = (weather) => ({
+export const setMobile = size => ({
+  type: SET_MOBILE,
+  size,
+});
+
+export const getWeather = weather => ({
   type: WEATHER_LOADED,
   weather,
 });
 
-export const getTimeSydney = (timeSydney) => ({
+export const getTimeSydney = timeSydney => ({
   type: TIME_LOADED_SYDNEY,
   timeSydney,
+});
+
+export const getTimeParis = timeParis => ({
+  type: TIME_LOADED_PARIS,
+  timeParis,
 });

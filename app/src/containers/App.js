@@ -2,13 +2,12 @@
  * Npm import
  */
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 
 /*
  * Local import
  */
 import App from 'src/components/App';
-import { loadDatas, setMobile, loadTimeSydney } from 'src/store/reducer';
+import { loadDatas, setMobile, loadTimeSydney, loadTimeParis } from 'src/store/reducer';
 /*
  * Code
  */
@@ -27,6 +26,9 @@ const mapDispatchToProps = dispatch => ({
     },
     loadTimeSydney: () => {
       dispatch(loadTimeSydney());
+    },
+    loadTimeParis: () => {
+      dispatch(loadTimeParis());
     },
   },
 });

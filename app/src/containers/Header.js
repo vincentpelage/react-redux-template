@@ -8,7 +8,6 @@ import { connect } from 'react-redux';
  * Local import
  */
 import Header from 'src/components/Header';
-import { checkTask, createTask } from 'src/store/reducer';
 
 
 /*

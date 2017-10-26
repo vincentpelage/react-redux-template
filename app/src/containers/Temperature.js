@@ -8,7 +8,6 @@ import { connect } from 'react-redux';
  * Local import
  */
 import Temperature from 'src/components/Temperature';
-import { checkTask, createTask } from 'src/store/reducer';
 
 
 /*
@@ -16,12 +15,14 @@ import { checkTask, createTask } from 'src/store/reducer';
  */
 // State
 const mapStateToProps = state => ({
-    weather: state.weather,
-    loaded: state.loaded,
-    mobile: state.mobile,
-    timeSydney: state.timeSydney,
-    loadedTimeSydney: state.loadedTimeSydney,
-  });
+  weather: state.weather,
+  loaded: state.loaded,
+  mobile: state.mobile,
+  timeSydney: state.timeSydney,
+  loadedTimeSydney: state.loadedTimeSydney,
+  timeParis: state.timeParis,
+  loadedTimeParis: state.loadedTimeParis,
+});
 
 // Actions
 const mapDispatchToProps = {};
