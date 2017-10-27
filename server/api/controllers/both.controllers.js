@@ -13,6 +13,8 @@ db.once('open', () => {
 });
 
 const Url = Model;
+
+// Simple test pour vérifier si l'URL est présente en bdd, pour tester la méthode find
 Url.find({ url: 'http://api.timezonedb.com/v2/get-time-zone?key=1LYUJ5AOD7V0&format=json&by=zone&zone=Australia/Sydney' }, (err, url) => {
   if (err) {
     console.log(err);
@@ -26,6 +28,7 @@ module.exports.bothGetAll = (req, res) => {
   const apiUrl = req.body.value;
 
   const newUrl = new Url({ url: apiUrl });
+  // Je sauvegarde à chaque fois mes URL en bdd
   newUrl.save((err, savedUrl) => {
     if (err) {
       console.error(err);
