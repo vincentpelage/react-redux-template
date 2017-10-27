@@ -32,8 +32,6 @@ const mapDispatchToProps = dispatch => ({
     },
   },
 });
-// http://api.timezonedb.com/v2/get-time-zone?key=1LYUJ5AOD7V0&format=xml&by=zone&zone=Australia/Sydney
-// http://api.timezonedb.com/v2/get-time-zone?key=1LYUJ5AOD7V0&format=xml&by=zone&zone=Europe/Paris
 
 /*
  * Component
