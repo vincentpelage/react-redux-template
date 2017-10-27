@@ -2,6 +2,7 @@
  * Npm import
  */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 /*
@@ -17,14 +18,14 @@ const Temperature = ({
   mobile,
   timeSydney,
   loadedTimeSydney,
-	timeParis,
-  loadedTimeParis
+  timeParis,
+  loadedTimeParis,
 }) => {
   if (!loaded || !loadedTimeSydney || !loadedTimeParis) {
     return null;
   }
   if (mobile) {
-    console.log('Mobile : ' + mobile);
+    console.log(`mobile : ${mobile}`);
   }
 
   let timeFormatedSydney = timeSydney.formatted;
@@ -45,14 +46,21 @@ const Temperature = ({
         </div>
       ))
       }
-      <div className="temperature-data">
-        <p className="weather time-sydney">{ timeFormatedSydney }</p>
-        <p className="weather time-paris">{ timeFormatedParis }</p>
-        <Link to="/sydney" className="weather info-sydney">Weather infos</Link>
-        <Link to="/paris" className="weather info-paris">Weather infos</Link>
-      </div>
+      <p className="weather time-paris">{ timeFormatedParis }</p>
+      <Link to="/paris" className="weather info-paris">Weather infos</Link>
+      <p className="weather time-sydney">{ timeFormatedSydney }</p>
+      <Link to="/sydney" className="weather info-sydney">Weather infos</Link>
     </div>
   );
+};
+Temperature.propTypes = {
+  weather: PropTypes.object.isRequired,
+  loaded: PropTypes.bool.isRequired,
+  mobile: PropTypes.bool.isRequired,
+  timeSydney: PropTypes.object.isRequired,
+  loadedTimeSydney: PropTypes.bool.isRequired,
+  timeParis: PropTypes.object.isRequired,
+  loadedTimeParis: PropTypes.bool.isRequired,
 };
 
 /*

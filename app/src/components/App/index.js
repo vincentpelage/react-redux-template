@@ -2,6 +2,8 @@
  * Npm import
  */
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import { Route } from 'react-router-dom';
 /*
  * Local import
@@ -14,6 +16,9 @@ import Sydney from 'src/components/Sydney';
  * Code
  */
 class App extends React.Component {
+  static propTypes = {
+    actions: PropTypes.object.isRequired,
+  }
   /*
    * Lifecycles
    */
