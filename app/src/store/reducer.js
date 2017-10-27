@@ -42,21 +42,23 @@ export default (state = initialState, action = {}) => {
         loadedTimeSydney: true,
       };
 
-    case TIME_LOADED_PARIS:
+    case TIME_LOADED_PARIS: {
       return {
         ...state,
         timeParis: action.timeParis,
         loadedTimeParis: true,
       };
+    }
 
-    case SET_MOBILE:
+    case SET_MOBILE: {
       if (action.size < 600) {
         return {
           ...state,
           mobile: true,
         };
       }
-
+      break;
+    }
 
     default:
       return state;

@@ -2,7 +2,7 @@
  * Npm import
  */
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 
 /*
  * Local import
@@ -48,6 +48,8 @@ const Temperature = ({
       <div className="temperature-data">
         <p className="weather time-sydney">{ timeFormatedSydney }</p>
         <p className="weather time-paris">{ timeFormatedParis }</p>
+        <Link to="/sydney" className="weather info-sydney">Weather infos</Link>
+        <Link to="/paris" className="weather info-paris">Weather infos</Link>
       </div>
     </div>
   );

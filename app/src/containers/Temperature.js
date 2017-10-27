@@ -2,7 +2,7 @@
  * Npm import
  */
 import { connect } from 'react-redux';
-
+import { withRouter } from 'react-router-dom';
 
 /*
  * Local import
@@ -38,4 +38,4 @@ const TemperatureContainer = createContainer(Temperature);
 /*
  * Export default
  */
-export default TemperatureContainer;
+export default withRouter(TemperatureContainer);

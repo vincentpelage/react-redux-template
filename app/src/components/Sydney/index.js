@@ -2,8 +2,6 @@
  * Npm import
  */
 import React from 'react';
-import { Route } from 'react-router-dom';
-import PropTypes from 'prop-types';
 
 
 /*
@@ -14,18 +12,12 @@ import PropTypes from 'prop-types';
 /*
  * Component
  */
-class Sydney extends React.Component {
-  /**
-   * Render
-   */
-  render() {
-    return (
-      <div id="sydney">
-        <p>Sydney</p>
-      </div>
-    );
-  }
-}
+
+const Sydney = () => (
+  <div id="sydney">
+    <p>Sydney</p>
+  </div>
+);
 
 
 /*

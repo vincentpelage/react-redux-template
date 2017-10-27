@@ -14,7 +14,6 @@ import { WEATHER_LOAD, getWeather, TIME_LOAD_SYDNEY, getTimeSydney, TIME_LOAD_PA
  * Code
  */
 const createMiddleware = store => next => (action) => {
-  // Je vérifie ce qui m'intéresse
   switch (action.type) {
     case WEATHER_LOAD: {
       axios.get('http://api.openweathermap.org/data/2.5/group?id=2988507,2147714&units=metric&APPID=3690c08b9243ba14aa00a12785524dd3').then((response) => {
